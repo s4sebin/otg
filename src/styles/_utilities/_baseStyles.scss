@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  color: $colorPrimaryColor;
+  min-width: 320px;
+  -webkit-text-size-adjust: 100%;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: $fontFamilyPrimary;
+}
+.ot-section-content {
+  font-family: $fontFamilySecondary;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 149.8%;
+  margin-bottom: 35px;
+  letter-spacing: -0.02em;
+  color: $colorMidnightBlack;
+}
+.ot-section-title {
+  font-family: $fontFamilySecondary;
+  color: var(--awb-color8);
+  letter-spacing: var(--h2_typography-letter-spacing);
+  text-transform: var(--h2_typography-text-transform);
+  padding: 0;
+  text-align: left;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 53px;
+}
