@@ -10,7 +10,7 @@ const CareerGps = () => {
         HighlightTitle="Gps"
         url="/assets/img/MicrosoftTeams-image-6.jpg"
       />
-      <div className="container mx-auto pt-10 px-6">
+      <div className="container mx-auto pt-10 px-20">
         <div className="md:flex w-full mb-6">
           <div className="w-full md:w-2/5 p-4">
             <img src="/assets/img/gps-img.png" alt="careerGps" />

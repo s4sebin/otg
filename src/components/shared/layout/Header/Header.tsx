@@ -14,13 +14,13 @@ const Header = () => {
     "Contact",
   ];
   return (
-    <header className="bg-gray-800 text-white py-4">
-      <div className="container mx-auto flex justify-between items-center px-4">
+    <header className="bg-gray-800 text-white py-4 ">
+      <div className="container mx-auto flex justify-between items-center px-20">
         <div className="flex items-center">
           <img
             src="/assets/img/OTG_Logo_Orange.svg"
             alt="Logo"
-            className="w-8 h-8 mr-2"
+            className="w-14 mr-2"
           />
         </div>
 
@@ -51,8 +51,10 @@ const Header = () => {
         {/* Menu bar on the right side */}
         <nav className={`md:flex ${isOpen ? "block" : "hidden"}`}>
           <ul className="flex space-x-4 md:space-x-8">
-            {menus.map((menu: string) => (
-              <li className="hover:text-gray-300">{menu}</li>
+            {menus.map((menu: string, i: number) => (
+              <li key={i} className="hover:text-gray-300">
+                {menu}
+              </li>
             ))}
           </ul>
         </nav>
