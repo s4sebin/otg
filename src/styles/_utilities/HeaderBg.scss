@@ -1,0 +1,51 @@
+.ot-slider-wrapper {
+  background-color: var(--awb-color8);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-width: 0px;
+  border-color: var(--awb-color2);
+  border-style: solid;
+  background-size: cover;
+  padding-top: 10%;
+  margin-top: 0px;
+  padding-right: 3%;
+  padding-bottom: 10%;
+  margin-bottom: 0px;
+  padding-left: 3%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &::after {
+    background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.94) 0%,
+      rgba(0, 0, 0, 0.64) 20.37%
+    );
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-width: 0px;
+    border-style: solid;
+    background-size: cover;
+  }
+  .ot-page-title {
+    margin: 0;
+    color: var(--awb-color1);
+    padding: 0;
+    font-family: "proxima-nova", sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 96px;
+    font-size: 96px;
+    position: relative;
+    font-weight: 900;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+}

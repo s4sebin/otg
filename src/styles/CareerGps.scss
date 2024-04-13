@@ -1,0 +1,21 @@
+.ot-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-color: var(--awb-color3);
+  @media screen and (max-width: 1199px) {
+    height: 400px;
+  }
+  @media screen and (max-width: 767px) {
+    height: 300px;
+  }
+  @media screen and (max-width: 576px) {
+    height: 225px;
+  }
+}
+.ot-iframe-controller-wrapper {
+  // position: absolute;
+  // top:0;
+  // right:0;
+}
