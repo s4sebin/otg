@@ -95,7 +95,7 @@ const IframeNew = () => {
         ref={divRef}
       >
         <iframe
-          src="/scorm/index.html"
+          src="./scorm/index.html"
           style={{
             position: "absolute",
             top: `${position.top}%`,

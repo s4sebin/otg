@@ -7,12 +7,12 @@ const CareerGps = () => {
       <HeaderBg
         title="Career"
         HighlightTitle="Gps"
-        url="/assets/img/MicrosoftTeams-image-6.jpg"
+        url="./assets/img/MicrosoftTeams-image-6.jpg"
       />
       <div className="container mx-auto pt-10 px-20">
         <div className="md:flex w-full mb-6">
           <div className="w-full md:w-2/5 p-4">
-            <img src="/assets/img/gps-img.png" alt="careerGps" />
+            <img src="./assets/img/gps-img.png" alt="careerGps" />
           </div>
           <div className="w-full md:w-3/5   p-4">
             <h2 className="ot-section-title mb-3">Map Your Future:</h2>

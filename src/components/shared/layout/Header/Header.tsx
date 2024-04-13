@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center px-20">
         <div className="flex items-center">
           <img
-            src="/assets/img/OTG_Logo_Orange.svg"
+            src="./assets/img/OTG_Logo_Orange.svg"
             alt="Logo"
             className="w-14 mr-2"
           />

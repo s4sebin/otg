@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto flex justify-between items-center px-20">
         <div className="flex items-center">
           <img
-            src="/assets/img/OTG_Logo_White.svg"
+            src="./assets/img/OTG_Logo_White.svg"
             alt="Logo"
             className="w-14 mr-2"
           />
