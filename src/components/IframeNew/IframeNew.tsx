@@ -4,6 +4,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faChevronUp,
+  faSearch,
   faSearchMinus,
   faSearchPlus,
   faUndo,
@@ -119,7 +120,7 @@ const IframeNew = () => {
           </button>
         )}
         <span className="inline-flex mr-2 items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
-          Zoom - {`${zoom}%`}
+          <FontAwesomeIcon icon={faSearch} /> {`${zoom}%`}
         </span>
         <div className="inline-flex rounded-md shadow-sm mr-5" role="group">
           <button

@@ -2,20 +2,19 @@
   background-color: var(--awb-color8);
   background-position: center center;
   background-repeat: no-repeat;
-  border-width: 0px;
+  border-width: 0;
   border-color: var(--awb-color2);
   border-style: solid;
   background-size: cover;
-  padding-top: 10%;
-  margin-top: 0px;
-  padding-right: 3%;
-  padding-bottom: 10%;
   margin-bottom: 0px;
-  padding-left: 3%;
   height: 80vh;
   position: relative;
   display: flex;
   justify-content: center;
+  max-width: 100%;
+  @media screen and (max-width: 576px) {
+    height: 50vh;
+  }
   &::after {
     background-image: linear-gradient(
       180deg,
@@ -47,5 +46,8 @@
     z-index: 1;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 576px) {
+      font-size: 30px;
+    }
   }
 }
