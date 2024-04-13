@@ -1,5 +1,5 @@
 // Layout.js
-import React, { ReactElement } from "react";
+
 import { LayoutProps } from "../types/layout.type";
 import Header from "../components/shared/layout/Header/Header";
 import Footer from "../components/shared/layout/Footer/Footer";

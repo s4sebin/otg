@@ -1,4 +1,3 @@
-import React from "react";
 import PinchZoomPan from "react-pinch-zoom-pan";
 
 interface Props {

@@ -1,4 +1,3 @@
-import React from "react";
 import IframeNew from "../../components/IframeNew/IframeNew";
 import HeaderBg from "../../components/shared/layout/HeaderBg/HeaderBg";
 

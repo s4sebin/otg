@@ -1,5 +1,4 @@
-// Header.js
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

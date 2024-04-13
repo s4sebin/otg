@@ -1,4 +1,3 @@
-import React from "react";
 import { HeaderBgProps } from "../../../../types/CareerGps.types";
 
 const HeaderBg = (props: HeaderBgProps) => {
