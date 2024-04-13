@@ -6,6 +6,7 @@ const MainRoute = () => {
   return (
     <Routes>
       <Route path={routeEnum.Home} element={<CareerGps />} />
+      <Route path={routeEnum.FallBack} element={<CareerGps />} />
     </Routes>
   );
 };
