@@ -1,7 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IframeNew from "../../components/IframeNew/IframeNew";
 import HeaderBg from "../../components/shared/layout/HeaderBg/HeaderBg";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import IframeModal from "../../components/IframeNew/IframeModal";
 
 const CareerGps = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <>
       <HeaderBg
@@ -34,7 +39,13 @@ const CareerGps = () => {
             </div>
           </div>
         </div>
-        <IframeNew />
+        <div className="position-relative">
+          <IframeNew openModal={() => setModalOpen(!isModalOpen)} />
+
+          {isModalOpen && (
+            <IframeModal onClose={() => setModalOpen(!isModalOpen)} />
+          )}
+        </div>
       </div>
     </>
   );

@@ -13,9 +13,44 @@
   @media screen and (max-width: 576px) {
     height: 225px;
   }
+  @media screen and (max-width: 1199px) and (orientation: landscape) {
+    height: 200px;
+  }
+  @media screen and (max-width: 1199px) and (orientation: landscape) and (max-height: 320px) {
+    &.ot-iframe-in-modal {
+      height: 220px;
+      border: 1px solid red;
+    }
+  }
+  @media screen and (max-width: 1199px) and (orientation: landscape) and (max-height: 300px) {
+    &.ot-iframe-in-modal {
+      height: 180px;
+      border: 1px solid green;
+    }
+  }
 }
-.ot-iframe-controller-wrapper {
-  // position: absolute;
-  // top:0;
-  // right:0;
+#ot-navigation-wrapper {
+  @media screen and (max-width: 1199px) and (orientation: landscape) {
+    display: none;
+  }
+}
+.ot-iframe-nav-landscape {
+  display: none !important;
+  @media screen and (max-width: 1199px) and (orientation: landscape) {
+    display: flex !important;
+    flex-direction: column;
+    button {
+      border-radius: 6px !important;
+      width: 50px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+.ot-iframe-outer-container {
+  @media screen and (max-width: 1199px) and (orientation: landscape) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+  }
 }

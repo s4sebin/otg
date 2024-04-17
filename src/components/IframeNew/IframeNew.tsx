@@ -4,6 +4,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faChevronUp,
+  faExpand,
   faSearch,
   faSearchMinus,
   faSearchPlus,
@@ -11,8 +12,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
+import { IframeProps } from "../../types/CareerGps.types";
 
-const IframeNew = () => {
+const IframeNew = ({ isInModal, openModal }: IframeProps) => {
   const [zoom, setZoom] = useState(100);
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const divRef = useRef<any>(null);
@@ -90,9 +92,52 @@ const IframeNew = () => {
   };
 
   return (
-    <div className="mb-7 relative">
+    <div className="mb-7 relative ot-iframe-outer-container">
       <div
-        className="ot-iframe-container border border-solid border-orange-600"
+        className="text-center mb-3 ot-iframe-nav-landscape"
+        id="ot-iframe-nav-left"
+      >
+        {!isInModal && (
+          <button
+            type="button"
+            className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+            onClick={openModal}
+          >
+            <FontAwesomeIcon icon={faExpand} />
+          </button>
+        )}{" "}
+        {!buttonDisableStatus.reset && (
+          <button
+            type="button"
+            className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+            onClick={() => setZoom(100)}
+            title="Reset All"
+          >
+            <FontAwesomeIcon icon={faUndo} />
+          </button>
+        )}
+        <span className="cursor-none  mr-2 items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+          <FontAwesomeIcon icon={faSearch} /> {`${zoom}%`}
+        </span>
+        <button
+          type="button"
+          className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+          onClick={handleZoomIn}
+        >
+          <FontAwesomeIcon icon={faSearchPlus} />
+        </button>
+        <button
+          type="button"
+          className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 rounded-e-lg dark:focus:ring-blue-500 dark:focus:text-white"
+          onClick={handleZoomOut}
+        >
+          <FontAwesomeIcon icon={faSearchMinus} />
+        </button>
+      </div>
+      <div
+        className={`ot-iframe-container   ${
+          isInModal && " ot-iframe-in-modal"
+        } `}
         ref={divRef}
       >
         <iframe
@@ -108,8 +153,54 @@ const IframeNew = () => {
           ref={iFrameRef}
         />
       </div>
-      <div className="flex justify-center md:justify-end my-4 ot-iframe-controller-wrapper flex-col md:flex-row ">
+      <div
+        className="inline-flex rounded-md shadow-sm  mb-3 justify-center  ot-iframe-nav-landscape"
+        role="group"
+        id="ot-iframe-nav-right"
+      >
+        <button
+          type="button"
+          className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+          onClick={() => handleMove("top")}
+        >
+          <FontAwesomeIcon icon={faChevronUp} />
+        </button>
+        <button
+          type="button"
+          className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700  dark:focus:ring-blue-500 dark:focus:text-white"
+          onClick={() => handleMove("right")}
+        >
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+        <button
+          type="button"
+          className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+          onClick={() => handleMove("left")}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        <button
+          type="button"
+          className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+          onClick={() => handleMove("bottom")}
+        >
+          <FontAwesomeIcon icon={faChevronDown} />
+        </button>
+      </div>
+      <div
+        id="ot-navigation-wrapper"
+        className="flex justify-center md:justify-end my-4 ot-iframe-controller-wrapper flex-col md:flex-row "
+      >
         <div className="text-center mb-3">
+          {!isInModal && (
+            <button
+              type="button"
+              className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+              onClick={openModal}
+            >
+              <FontAwesomeIcon icon={faExpand} />
+            </button>
+          )}{" "}
           {!buttonDisableStatus.reset && (
             <button
               type="button"
@@ -120,7 +211,7 @@ const IframeNew = () => {
               <FontAwesomeIcon icon={faUndo} />
             </button>
           )}
-          <span className="inline-flex mr-2 items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+          <span className="cursor-none inline-flex mr-2 items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
             <FontAwesomeIcon icon={faSearch} /> {`${zoom}%`}
           </span>
           <div className="inline-flex rounded-md shadow-sm mr-5" role="group">
