@@ -92,7 +92,7 @@ const IframeNew = ({ isInModal, openModal }: IframeProps) => {
   };
 
   return (
-    <div className="mb-7 relative ot-iframe-outer-container">
+    <div className="mb-7 relative ot-iframe-outer-container justify-between">
       <div
         className="text-center mb-3 ot-iframe-nav-landscape"
         id="ot-iframe-nav-left"
@@ -136,7 +136,7 @@ const IframeNew = ({ isInModal, openModal }: IframeProps) => {
       </div>
       <div
         className={`ot-iframe-container   ${
-          isInModal && " ot-iframe-in-modal"
+          isInModal ? " ot-iframe-in-modal" : ""
         } `}
         ref={divRef}
       >

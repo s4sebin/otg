@@ -1,4 +1,3 @@
-import React from "react";
 import { IframeModalProps } from "../../types/CareerGps.types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -7,10 +6,10 @@ import IframeNew from "./IframeNew";
 const IframeModal = ({ onClose }: IframeModalProps) => {
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50   w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div className="relative w-full h-full max-w-full max-h-full">
+      <div className="ot-iframe-modal fixed top-0 left-0 right-0 z-50   w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div className="ot-modal-content relative w-full  max-w-full max-h-full">
           {/*content*/}
-          <div className="border-0 rounded-lg shadow-lg relative flex flex-col h-full w-full bg-white outline-none focus:outline-none">
+          <div className="border-0 rounded-lg shadow-lg relative flex flex-col  w-full bg-white outline-none focus:outline-none">
             {/*header*/}
             <div className="flex items-start justify-between p-1 border-b border-solid border-blueGray-200 rounded-t">
               <h3 className="text-xl font-semibold">Full screen</h3>

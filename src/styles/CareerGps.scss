@@ -14,19 +14,37 @@
     height: 225px;
   }
   @media screen and (max-width: 1199px) and (orientation: landscape) {
-    height: 200px;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    left: 65px;
+    right: 65px;
+    top: 0;
+    bottom: 0;
   }
   @media screen and (max-width: 1199px) and (orientation: landscape) and (max-height: 320px) {
-    &.ot-iframe-in-modal {
-      height: 220px;
-      border: 1px solid red;
-    }
+    // &.ot-iframe-in-modal {
+    //   height: 220px;
+    // }
   }
   @media screen and (max-width: 1199px) and (orientation: landscape) and (max-height: 300px) {
-    &.ot-iframe-in-modal {
-      height: 180px;
-      border: 1px solid green;
+    // &.ot-iframe-in-modal {
+    //   height: 180px;
+    // }
+  }
+}
+.ot-iframe-modal {
+  .ot-iframe-outer-container {
+    margin-bottom: 10px !important;
+
+    @media screen and (max-width: 1199px) and (orientation: landscape) {
+      height: 100%;
+      align-items: stretch;
+      justify-content: space-between;
     }
+  }
+  .ot-modal-content {
+    height: 100%;
   }
 }
 #ot-navigation-wrapper {
@@ -39,6 +57,7 @@
   @media screen and (max-width: 1199px) and (orientation: landscape) {
     display: flex !important;
     flex-direction: column;
+    padding-left: 5px;
     button {
       border-radius: 6px !important;
       width: 50px;
