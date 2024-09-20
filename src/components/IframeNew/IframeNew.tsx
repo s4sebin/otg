@@ -51,22 +51,22 @@ const IframeNew = ({ isInModal, openModal }: IframeProps) => {
       iFrameRef.current.getBoundingClientRect();
 
     switch (direction) {
-      case "left": {
+      case "right": {
         const maxLeftMoveWidth = iWidth - iWidth / 4;
         if (iLeft > -maxLeftMoveWidth) newPosition.left -= step;
         break;
       }
-      case "right": {
+      case "left": {
         const maxRightMoveWidth = pWidth - pWidth / 4;
         if (iLeft < maxRightMoveWidth) newPosition.left += step;
         break;
       }
-      case "top": {
+      case "bottom": {
         const iFrameEdge = zoom - 10;
         if (newPosition.top > -iFrameEdge) newPosition.top -= step;
         break;
       }
-      case "bottom":
+      case "top":
         if (newPosition.top < 80) newPosition.top += step;
         break;
       default:
